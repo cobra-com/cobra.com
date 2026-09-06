@@ -7,7 +7,7 @@
 <title>بروفايل المستخدم - COBRA TV</title>
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="شاهد بروفايل المستخدم على COBRA TV ">
+<meta property="og:title" content="شاهد بروفايل المستخدم على COBRA TV 🚀">
 <meta property="og:description" content="تابع أحدث الفيديوهات والبث المباشر على منصة COBRA TV.">
 <meta property="og:image" content="https://res.cloudinary.com/mfkqydlq/image/upload/v1788100322/user_avatar_1788100316121.png">
 
@@ -44,7 +44,7 @@ main{padding:34px 0 70px}
     position:relative;
     overflow:hidden;
     background:
-      linear-gradient(rgba(7,6,10,.64),rgba(7,6,10,.72)),
+      linear-gradient(rgba(7,6,10,.72),rgba(7,6,10,.78)),
       url("https://res.cloudinary.com/vh0bcl3t/image/upload/v1788724447/ChatGPT_Image_Sep_6_2026_12_53_28_PM_xreiko.png") center/cover no-repeat;
     border:1px solid rgba(255,255,255,.12);
     box-shadow:0 25px 80px rgba(0,0,0,.48);
@@ -54,23 +54,10 @@ main{padding:34px 0 70px}
 }
 
 /* PROFILE */
-.avatar-wrap{position:relative;width:128px;height:128px;flex:0 0 auto}
-.avatar-wrap .avatar{width:128px;height:128px;display:block}
-.crown{
-    position:absolute;
-    top:-18px;
-    right:-5px;
-    width:48px;height:40px;
-    display:flex;align-items:center;justify-content:center;
-    color:#ff4b85;
-    font-size:31px;font-weight:950;
-    transform:rotate(14deg);
-    filter:drop-shadow(0 5px 10px rgba(0,0,0,.6));
-    text-shadow:0 0 12px rgba(255,0,85,.55);
-    z-index:3;
-}
 .profile{
+    position:relative;
     padding:34px;
+    min-height:245px;
     display:flex;
     align-items:center;
 }
@@ -80,13 +67,45 @@ main{padding:34px 0 70px}
     flex-direction:row;
     direction:rtl;
     align-items:center;
+    justify-content:flex-start;
     gap:26px;
+    padding-left:170px;
 }
-.avatar{
-    width:128px;height:128px;object-fit:cover;
+.avatar-wrap{
+    width:128px;height:128px;flex:0 0 auto;
+}
+.avatar-wrap .avatar{
+    width:128px;height:128px;
+    display:block;
+    object-fit:cover;
     border-radius:50%;
     border:2px solid rgba(255,0,85,.75);
     box-shadow:0 0 35px rgba(255,0,85,.28);
+}
+.details{min-width:0}
+.brand-top{
+    position:absolute;
+    left:34px;
+    top:30px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:7px;
+    width:120px;
+}
+.brand-top img{
+    width:70px;height:70px;
+    object-fit:cover;
+    border-radius:18px;
+    border:1px solid rgba(255,255,255,.12);
+    box-shadow:0 0 28px rgba(255,0,85,.20);
+}
+.brand-name{
+    display:block;
+    font-weight:950;
+    letter-spacing:1.5px;
+    font-size:16px;
+    white-space:nowrap;
 }
 .details h1{font-size:clamp(25px,3vw,38px);line-height:1.15;font-weight:900}
 .username{display:block;color:#ff4b85;font-weight:700;margin-top:7px}
@@ -98,21 +117,6 @@ main{padding:34px 0 70px}
 .stat b{display:block;font-size:18px}
 .stat span{font-size:12px;color:var(--muted)}
 .bio{color:#bbb7c0;line-height:1.8;max-width:650px}
-.brand{text-align:right}
-.brand-inline{
-    display:flex;
-    flex-direction:row;
-    align-items:center;
-    justify-content:flex-start;
-    gap:10px;
-    margin-bottom:12px;
-}
-.brand img{
-    width:58px;height:58px;object-fit:cover;border-radius:15px;
-    border:1px solid rgba(255,255,255,.12);
-    box-shadow:0 0 40px rgba(255,0,85,.22);
-}
-.brand-name{display:block;font-weight:950;letter-spacing:2px;margin-top:0}
 
 /* SHOWCASE */
 .showcase{
@@ -216,10 +220,16 @@ main{padding:34px 0 70px}
 
 @media(max-width:800px){
     main{padding-top:18px}
-    .profile{padding:25px;text-align:center}
-    .user{flex-direction:column;gap:18px}
+    .profile{padding:25px;text-align:center;min-height:0}
+    .user{flex-direction:column;gap:18px;padding-left:0}
     .details{width:100%}
-    .brand-inline{justify-content:center;text-align:center}
+    .brand-top{
+        position:static;
+        width:100%;
+        margin:0 0 22px;
+        order:-1;
+    }
+    .brand-top img{width:64px;height:64px}
     .stats{justify-content:center}
     .showcase{grid-template-columns:1fr;padding:38px 24px;text-align:center}
     .copy p{margin-left:auto;margin-right:auto}
@@ -253,33 +263,32 @@ main{padding:34px 0 70px}
 <main id="profileContent" class="container" style="display:none">
 
     <section class="card profile">
-        <div class="user">
-            <div class="avatar-wrap">
-                <img id="avatar" class="avatar"
-                     src="https://res.cloudinary.com/mfkqydlq/image/upload/v1788100322/user_avatar_1788100316121.png"
-                     alt="Profile">
-                <span class="crown" aria-hidden="true">♛</span>
-            </div>
-
-            <div class="details">
-                <div class="brand brand-inline">
-                    <img src="https://res.cloudinary.com/mfkqydlq/image/upload/v1788100322/user_avatar_1788100316121.png" alt="COBRA TV">
-                    <span class="brand-name">COBRA TV</span>
-                </div>
-
-                <h1 id="displayName">--</h1>
-                <span id="username" class="username">--</span>
-
-                <div class="stats">
-                    <div class="stat"><b id="followersCount">0</b><span>المتابعون</span></div>
-                    <div class="stat"><b id="followingCount">0</b><span>أتابعه</span></div>
-                    <div class="stat"><b id="likesCount">0</b><span>الإعجابات</span></div>
-                </div>
-
-                <p id="bio" class="bio">--</p>
-            </div>
+    <div class="user">
+        <div class="avatar-wrap">
+            <img id="avatar" class="avatar"
+                 src="https://res.cloudinary.com/mfkqydlq/image/upload/v1788100322/user_avatar_1788100316121.png"
+                 alt="Profile">
         </div>
-    </section>
+
+        <div class="details">
+            <h1 id="displayName">--</h1>
+            <span id="username" class="username">--</span>
+
+            <div class="stats">
+                <div class="stat"><b id="followersCount">0</b><span>المتابعون</span></div>
+                <div class="stat"><b id="followingCount">0</b><span>أتابعه</span></div>
+                <div class="stat"><b id="likesCount">0</b><span>الإعجابات</span></div>
+            </div>
+
+            <p id="bio" class="bio">--</p>
+        </div>
+    </div>
+
+    <div class="brand brand-top">
+        <img src="https://res.cloudinary.com/mfkqydlq/image/upload/v1788100322/user_avatar_1788100316121.png" alt="COBRA TV">
+        <span class="brand-name">COBRA TV</span>
+    </div>
+</section>
 
     <section class="card showcase">
         <div class="copy">
