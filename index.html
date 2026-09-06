@@ -4,30 +4,106 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>بروفايل المستخدم - COBRA TV</title>
+
+    <!-- Meta Tags لمعاينة الرابط في واتساب ووسائل التواصل -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="شاهد بروفايل المستخدم على COBRA TV 🚀">
+    <meta property="og:description" content="تابع أحدث الفيديوهات والبث المباشر على منصة COBRA TV. حمل التطبيق الآن وشارِك التفاعل!">
+    <meta property="og:image" content="https://res.cloudinary.com/mfkqydlq/image/upload/v1788100322/user_avatar_1788100316121.png">
+
     <style>
+        :root {
+            --bg-color: #09090b;
+            --card-bg: rgba(22, 22, 29, 0.7);
+            --primary-color: #ff0055;
+            --primary-hover: #e0004c;
+            --text-main: #ffffff;
+            --text-sub: #a1a1aa;
+            --border-color: rgba(255, 255, 255, 0.1);
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: system-ui, -apple-system, sans-serif; }
-        body { background-color: #0d0d0e; color: #ffffff; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px; }
-        .card { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 24px; padding: 32px 24px; width: 100%; max-width: 380px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        .avatar { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; border: 2px solid #ff0055; margin-bottom: 16px; }
-        .name { font-size: 20px; font-weight: bold; margin-bottom: 4px; }
-        .username { color: #ff0055; font-size: 14px; margin-bottom: 12px; }
-        .bio { font-size: 13px; color: #a1a1aa; line-height: 1.5; margin-bottom: 24px; }
-        .stats { display: flex; justify-content: space-around; background: rgba(0,0,0,0.3); padding: 12px; border-radius: 16px; margin-bottom: 24px; }
-        .stat-item { display: flex; flex-direction: column; }
-        .stat-value { font-weight: bold; font-size: 16px; }
-        .stat-label { font-size: 11px; color: #a1a1aa; margin-top: 2px; }
-        .btn { display: block; width: 100%; padding: 14px; background: #ff0055; color: white; text-decoration: none; font-weight: bold; border-radius: 50px; transition: 0.3s; }
-        .btn:hover { background: #e0004c; transform: translateY(-2px); }
-        .loader { border: 3px solid rgba(255,255,255,0.1); border-top: 3px solid #ff0055; border-radius: 50%; width: 30px; height: 30px; animation: spin 1s linear infinite; margin: 20px auto; }
+        body { background-color: var(--bg-color); color: var(--text-main); min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 24px 16px; }
+
+        .container { width: 100%; max-width: 900px; display: flex; flex-direction: column; gap: 24px; }
+
+        /* Top Header Area */
+        .profile-header {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            backdrop-filter: blur(16px);
+            border-radius: 20px;
+            padding: 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+        }
+
+        .user-main-info { display: flex; gap: 24px; align-items: center; }
+        .avatar { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid var(--primary-color); box-shadow: 0 0 20px rgba(255, 0, 85, 0.4); }
+
+        .details { display: flex; flex-direction: column; gap: 8px; }
+        .details h1 { font-size: 26px; font-weight: 800; color: var(--text-main); }
+        .details .username { color: var(--primary-color); font-size: 15px; font-weight: 600; }
+        
+        .stats-row { display: flex; gap: 20px; margin: 12px 0; }
+        .stat-box { display: flex; align-items: center; gap: 6px; font-size: 15px; }
+        .stat-value { font-weight: 800; color: var(--text-main); }
+        .stat-label { color: var(--text-sub); font-size: 13px; }
+
+        .bio { font-size: 14px; color: var(--text-sub); line-height: 1.6; max-width: 500px; }
+
+        .brand-logo { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+        .brand-logo img { width: 50px; height: 50px; border-radius: 12px; }
+        .brand-name { font-weight: 900; font-size: 18px; letter-spacing: 1px; color: #fff; }
+
+        /* Bottom Download Card */
+        .app-banner {
+            background: linear-gradient(135deg, rgba(255, 0, 85, 0.15) 0%, rgba(15, 15, 20, 0.8) 100%);
+            border: 1px solid rgba(255, 0, 85, 0.3);
+            border-radius: 20px;
+            padding: 28px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .banner-text h3 { font-size: 20px; font-weight: 700; margin-bottom: 6px; }
+        .banner-text p { font-size: 14px; color: var(--text-sub); }
+
+        .btn {
+            background: var(--primary-color);
+            color: #ffffff;
+            padding: 14px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            box-shadow: 0 4px 15px rgba(255, 0, 85, 0.4);
+        }
+        .btn:hover { background: var(--primary-hover); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255, 0, 85, 0.6); }
+
+        .loader { border: 4px solid rgba(255,255,255,0.1); border-top: 4px solid var(--primary-color); border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; margin: 60px auto; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+        @media (max-width: 650px) {
+            .profile-header { flex-direction: column-reverse; align-items: center; text-align: center; }
+            .user-main-info { flex-direction: column; align-items: center; }
+            .stats-row { justify-content: center; }
+            .brand-logo { align-items: center; margin-bottom: 10px; }
+            .app-banner { flex-direction: column; text-align: center; }
+        }
     </style>
 
-    <!-- Firebase Web SDK CDN (v9) -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
         import { getFirestore, doc, getDoc, collection, query, where, getDocs } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js";
 
-        // 🔥 بيانات مشروعك الحقيقية
         const firebaseConfig = {
             apiKey: "AIzaSyCZzSbLegFJ_xaVVqtFWFUCu2WFOd42cF0",
             authDomain: "cobra-tv-b1231.firebaseapp.com",
@@ -41,26 +117,31 @@
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app);
 
+        // تنسيق الأرقام لتظهر k و M
+        function formatNumber(num) {
+            if (!num || isNaN(num)) return "0";
+            if (num >= 1000000) return (num / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
+            if (num >= 1000) return (num / 1000).toFixed(1).replace(/\.0$/, '') + 'K';
+            return num.toString();
+        }
+
         async function fetchUserProfile() {
             const urlParams = new URLSearchParams(window.location.search);
             const userQuery = urlParams.get('u');
 
             if (!userQuery) {
-                showError("الرابط غير صحيح أو لا يحتوي على معرف");
+                showError("الرابط غير صحيح أو لا يحتوي على اسم مستخدم");
                 return;
             }
 
             try {
                 let userData = null;
-
-                // 1. تجربة جلب المستند بـ UID مباشر
                 const docRef = doc(db, "users", userQuery);
                 const docSnap = await getDoc(docRef);
 
                 if (docSnap.exists()) {
                     userData = docSnap.data();
                 } else {
-                    // 2. تجربة جلب المستند بالبحث عن حقل الـ username
                     const q = query(collection(db, "users"), where("username", "==", userQuery));
                     const querySnapshot = await getDocs(q);
                     if (!querySnapshot.empty) {
@@ -74,37 +155,43 @@
                     showError("المستخدم غير موجود");
                 }
             } catch (error) {
-                console.error("Firebase Error:", error);
-                showError("حدث خطأ أثناء تحميل البيانات من الفايربيز");
+                console.error("Error fetching data:", error);
+                showError("حدث خطأ أثناء سحب البيانات من الفايربيز");
             }
         }
 
         function renderUserData(data, userId) {
             document.getElementById("loader").style.display = "none";
-            document.getElementById("content").style.display = "block";
+            document.getElementById("profileContent").style.display = "flex";
 
-            // جلب الاسم والصورة والملاحظات بحسب الحقول الموجودة لديك في Firestore
-            document.getElementById("displayName").innerText = data.name || data.displayName || userId;
-            document.getElementById("username").innerText = "@" + (data.username || "user");
-            document.getElementById("bio").innerText = data.bio || "مرحباً بك في بروفايلي على COBRA TV 🚀";
-            
-            // الصورة الشخصية
+            const name = data.name || data.displayName || userId;
+            const username = data.username || userId;
+
+            document.getElementById("displayName").innerText = name;
+            document.getElementById("username").innerText = "@" + username;
+            document.getElementById("bio").innerText = data.bio || "مرحباً بك في صفحة بروفايلي الرسمية على تطبيق COBRA TV 🔥";
+
             if (data.photoUrl || data.avatarUrl) {
                 document.getElementById("avatar").src = data.photoUrl || data.avatarUrl;
             }
 
-            // العدادات
-            document.getElementById("followersCount").innerText = data.followersCount || 0;
-            document.getElementById("followingCount").innerText = data.followingCount || 0;
-            document.getElementById("likesCount").innerText = data.likesCount || 0;
+            document.getElementById("followersCount").innerText = formatNumber(data.followersCount || 0);
+            document.getElementById("followingCount").innerText = formatNumber(data.followingCount || 0);
+            document.getElementById("likesCount").innerText = formatNumber(data.likesCount || 0);
 
-            // رابط فتح التطبيق
-            document.getElementById("openAppBtn").href = `cobratv://user?uid=${data.uid || userId}`;
+            // إعداد روابط Firing Intent لفتح الأبلكيشن تلقائياً أو عند الضغط
+            const deepLink = `intent://user?u=${username}#Intent;scheme=cobratv;package=com.cobratv.app;end`;
+            document.getElementById("openAppBtn").href = deepLink;
+
+            // محاولة تحويل تلقائي لو الفتح من الهاتف
+            setTimeout(() => {
+                window.location.href = deepLink;
+            }, 800);
         }
 
         function showError(msg) {
             document.getElementById("loader").style.display = "none";
-            document.getElementById("content").style.display = "block";
+            document.getElementById("profileContent").style.display = "flex";
             document.getElementById("displayName").innerText = msg;
             document.getElementById("username").innerText = "";
             document.getElementById("bio").innerText = "";
@@ -115,33 +202,54 @@
 </head>
 <body>
 
-    <div class="card">
-        <div id="loader" class="loader"></div>
+    <div id="loader" class="loader"></div>
 
-        <div id="content" style="display: none;">
-            <img id="avatar" class="avatar" src="https://res.cloudinary.com/mfkqydlq/image/upload/v1788100322/user_avatar_1788100316121.png" alt="Avatar">
+    <div id="profileContent" class="container" style="display: none;">
+        
+        <!-- Header Profile Section -->
+        <div class="profile-header">
+            
+            <div class="user-main-info">
+                <img id="avatar" class="avatar" src="https://res.cloudinary.com/mfkqydlq/image/upload/v1788100322/user_avatar_1788100316121.png" alt="Profile Picture">
+                <div class="details">
+                    <h1 id="displayName">--</h1>
+                    <span id="username" class="username">--</span>
+                    
+                    <div class="stats-row">
+                        <div class="stat-box">
+                            <span id="followingCount" class="stat-value">0</span>
+                            <span class="stat-label">أتابعه</span>
+                        </div>
+                        <div class="stat-box">
+                            <span id="followersCount" class="stat-value">0</span>
+                            <span class="stat-label">المتابعون</span>
+                        </div>
+                        <div class="stat-box">
+                            <span id="likesCount" class="stat-value">0</span>
+                            <span class="stat-label">تسجيلات الإعجاب</span>
+                        </div>
+                    </div>
 
-            <h2 id="displayName" class="name">--</h2>
-            <p id="username" class="username">--</p>
-            <p id="bio" class="bio">--</p>
-
-            <div class="stats">
-                <div class="stat-item">
-                    <span id="followersCount" class="stat-value">0</span>
-                    <span class="stat-label">متابع</span>
-                </div>
-                <div class="stat-item">
-                    <span id="followingCount" class="stat-value">0</span>
-                    <span class="stat-label">يتابع</span>
-                </div>
-                <div class="stat-item">
-                    <span id="likesCount" class="stat-value">0</span>
-                    <span class="stat-label">إعجاب</span>
+                    <p id="bio" class="bio">--</p>
                 </div>
             </div>
 
-            <a id="openAppBtn" href="#" class="btn">فتح في تطبيق COBRA TV</a>
+            <div class="brand-logo">
+                <img src="https://res.cloudinary.com/mfkqydlq/image/upload/v1788100322/user_avatar_1788100316121.png" alt="COBRA TV Logo">
+                <span class="brand-name">COBRA TV</span>
+            </div>
+
         </div>
+
+        <!-- Banner Download / Open App Section -->
+        <div class="app-banner">
+            <div class="banner-text">
+                <h3>حمل تطبيق COBRA TV لمتابعة المحتوى 🎬</h3>
+                <p>انضم إلينا الآن، استمتع بالبث المباشر والمحتوى الحصري والتفاعل مع المبدعين!</p>
+            </div>
+            <a id="openAppBtn" href="#" class="btn">فتح في التطبيق 🚀</a>
+        </div>
+
     </div>
 
 </body>
