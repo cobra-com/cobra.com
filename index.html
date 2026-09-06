@@ -4,12 +4,51 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#09070d">
+<meta name="application-name" content="COBRA TV">
+<meta name="description" content="صفحة بروفايل مستخدم رسمية على منصة COBRA TV. استعرض معلومات البروفايل وتعرّف على تطبيق COBRA TV.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+
+<!-- AI / Search-friendly page identity: factual metadata, not a security claim -->
+<meta name="author" content="COBRA TV">
+<meta name="application-name" content="COBRA TV">
+<meta name="category" content="Social Media, Video, Live Streaming">
+
+<link rel="icon" type="image/png" href="https://res.cloudinary.com/mfkqydlq/image/upload/v1788100322/user_avatar_1788100316121.png">
+<link rel="apple-touch-icon" href="https://res.cloudinary.com/mfkqydlq/image/upload/v1788100322/user_avatar_1788100316121.png">
+
 <title>بروفايل المستخدم - COBRA TV</title>
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="شاهد بروفايل المستخدم على COBRA TV ">
-<meta property="og:description" content="تابع أحدث الفيديوهات والبث المباشر على منصة COBRA TV.">
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="COBRA TV">
+<meta property="og:title" content="بروفايل مستخدم على COBRA TV">
+<meta property="og:description" content="هذه صفحة بروفايل مستخدم على منصة COBRA TV.">
 <meta property="og:image" content="https://res.cloudinary.com/mfkqydlq/image/upload/v1788100322/user_avatar_1788100316121.png">
+<meta property="og:image:alt" content="COBRA TV">
+<meta property="og:locale" content="ar_AR">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="بروفايل مستخدم على COBRA TV">
+<meta name="twitter:description" content="هذه صفحة بروفايل مستخدم على منصة COBRA TV.">
+<meta name="twitter:image" content="https://res.cloudinary.com/mfkqydlq/image/upload/v1788100322/user_avatar_1788100316121.png">
+
+<!-- Canonical is filled dynamically from the current URL below. -->
+
+<script type="application/ld+json" id="pageStructuredData">
+{
+  "@context":"https://schema.org",
+  "@type":"ProfilePage",
+  "name":"COBRA TV User Profile",
+  "isPartOf":{
+    "@type":"WebSite",
+    "name":"COBRA TV"
+  },
+  "about":{
+    "@type":"MobileApplication",
+    "name":"COBRA TV",
+    "applicationCategory":"SocialNetworkingApplication"
+  }
+}
+</script>
 
 <style>
 :root{
@@ -20,6 +59,7 @@
     --text:#fff;
     --muted:#aaa7b0;
     --line:rgba(255,255,255,.10);
+    --background-url:url("https://res.cloudinary.com/vh0bcl3t/image/upload/v1788724447/ChatGPT_Image_Sep_6_2026_12_53_28_PM_xreiko.png");
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -28,24 +68,22 @@ body{
     color:var(--text);
     background:
       linear-gradient(rgba(5,4,8,.32),rgba(5,4,8,.58)),
-      url("https://res.cloudinary.com/vh0bcl3t/image/upload/v1788724447/ChatGPT_Image_Sep_6_2026_12_53_28_PM_xreiko.png") center top/cover fixed no-repeat,
+      var(--background-url) center top/cover fixed no-repeat,
       var(--bg);
     font-family:system-ui,-apple-system,"Segoe UI",Tahoma,Arial,sans-serif;
     overflow-x:hidden;
 }
 body:before{
-    content:"";
-    position:fixed;inset:0;pointer-events:none;
+    content:"";position:fixed;inset:0;pointer-events:none;
     background:radial-gradient(circle at 50% 35%,rgba(255,0,85,.10),transparent 42%);
 }
 .container{width:min(1120px,calc(100% - 32px));margin:auto;position:relative;z-index:1}
 main{padding:34px 0 70px}
 .card{
-    position:relative;
-    overflow:hidden;
+    position:relative;overflow:hidden;
     background:
       linear-gradient(rgba(8,6,12,.68),rgba(8,6,12,.76)),
-      url("https://res.cloudinary.com/vh0bcl3t/image/upload/v1788724447/ChatGPT_Image_Sep_6_2026_12_53_28_PM_xreiko.png") center/cover no-repeat;
+      var(--background-url) center/cover no-repeat;
     border:1px solid rgba(255,255,255,.13);
     box-shadow:0 25px 80px rgba(0,0,0,.50);
     backdrop-filter:blur(8px);
@@ -54,108 +92,60 @@ main{padding:34px 0 70px}
 }
 
 /* PROFILE */
-.profile{
-    position:relative;
-    padding:34px;
-    min-height:245px;
-    display:flex;
-    align-items:center;
-}
+.profile{position:relative;padding:34px;min-height:245px;display:flex;align-items:center}
 .user{
-    width:100%;
-    display:flex;
-    flex-direction:row;
-    direction:rtl;
-    align-items:center;
-    justify-content:flex-start;
-    gap:26px;
-    padding-left:170px;
+    width:100%;display:flex;flex-direction:row;direction:rtl;align-items:center;
+    justify-content:flex-start;gap:26px;padding-left:170px
 }
-.avatar-wrap{
-    width:128px;height:128px;flex:0 0 auto;
-}
+.avatar-wrap{width:128px;height:128px;flex:0 0 auto}
 .avatar-wrap .avatar{
-    width:128px;height:128px;
-    display:block;
-    object-fit:cover;
-    border-radius:50%;
-    border:2px solid rgba(255,0,85,.75);
-    box-shadow:0 0 35px rgba(255,0,85,.28);
+    width:128px;height:128px;display:block;object-fit:cover;border-radius:50%;
+    border:2px solid rgba(255,0,85,.75);box-shadow:0 0 35px rgba(255,0,85,.28)
 }
 .details{min-width:0}
 .brand-top{
-    position:absolute;
-    left:34px;
-    top:30px;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:7px;
-    width:120px;
+    position:absolute;left:34px;top:30px;display:flex;flex-direction:column;
+    align-items:center;gap:7px;width:120px
 }
 .brand-top img{
-    width:70px;height:70px;
-    object-fit:cover;
-    border-radius:18px;
-    border:1px solid rgba(255,255,255,.12);
-    box-shadow:0 0 28px rgba(255,0,85,.20);
+    width:70px;height:70px;object-fit:cover;border-radius:18px;
+    border:1px solid rgba(255,255,255,.12);box-shadow:0 0 28px rgba(255,0,85,.20)
 }
-.brand-name{
-    display:block;
-    font-weight:950;
-    letter-spacing:1.5px;
-    font-size:16px;
-    white-space:nowrap;
-}
+.brand-name{display:block;font-weight:950;letter-spacing:1.5px;font-size:16px;white-space:nowrap}
 .details h1{font-size:clamp(25px,3vw,38px);line-height:1.15;font-weight:900}
 .username{display:block;color:#ff4b85;font-weight:700;margin-top:7px}
 .stats{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
-.stat{
-    min-width:105px;padding:10px 14px;border:1px solid var(--line);
-    border-radius:15px;background:rgba(255,255,255,.035);
-}
-.stat b{display:block;font-size:18px}
-.stat span{font-size:12px;color:var(--muted)}
+.stat{min-width:105px;padding:10px 14px;border:1px solid var(--line);border-radius:15px;background:rgba(255,255,255,.035)}
+.stat b{display:block;font-size:18px}.stat span{font-size:12px;color:var(--muted)}
 .bio{color:#bbb7c0;line-height:1.8;max-width:650px}
 
 /* SHOWCASE */
 .showcase{
-    margin-top:24px;min-height:560px;overflow:hidden;
-    display:grid;grid-template-columns:1.05fr .95fr;align-items:center;
-    padding:42px 55px;
+    margin-top:24px;min-height:560px;overflow:hidden;display:grid;
+    grid-template-columns:1.05fr .95fr;align-items:center;padding:42px 55px;
     background:
       linear-gradient(rgba(8,6,12,.62),rgba(8,6,12,.76)),
-      url("https://res.cloudinary.com/vh0bcl3t/image/upload/v1788724447/ChatGPT_Image_Sep_6_2026_12_53_28_PM_xreiko.png") center/cover no-repeat;
+      var(--background-url) center/cover no-repeat;
 }
 .copy{position:relative;z-index:2}
-.kicker{
-    color:#ff4b85;font-weight:900;letter-spacing:2px;font-size:13px;margin-bottom:12px
-}
+.kicker{color:#ff4b85;font-weight:900;letter-spacing:2px;font-size:13px;margin-bottom:12px}
 .copy h2{font-size:clamp(34px,5vw,66px);line-height:1.04;font-weight:950;max-width:560px}
 .copy h2 span{color:var(--pink)}
 .copy p{color:#b5b1ba;font-size:17px;line-height:1.9;max-width:500px;margin:20px 0 28px}
 .cta{
-    display:inline-flex;align-items:center;justify-content:center;
-    min-height:54px;padding:0 27px;border-radius:17px;
-    background:linear-gradient(135deg,var(--pink),var(--pink2));
-    color:#fff;text-decoration:none;font-weight:900;
-    box-shadow:0 14px 35px rgba(255,0,85,.28);
-    transition:.25s;
+    display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 27px;
+    border-radius:17px;background:linear-gradient(135deg,var(--pink),var(--pink2));
+    color:#fff;text-decoration:none;font-weight:900;box-shadow:0 14px 35px rgba(255,0,85,.28);transition:.25s
 }
 .cta:hover{transform:translateY(-3px);box-shadow:0 18px 42px rgba(255,0,85,.4)}
-.phone-wrap{
-    min-height:480px;display:flex;align-items:center;justify-content:center;
-    position:relative;
-}
+.phone-wrap{min-height:480px;display:flex;align-items:center;justify-content:center;position:relative}
 .phone-wrap:after{
     content:"";position:absolute;width:300px;height:300px;border-radius:50%;
-    background:rgba(255,0,85,.20);filter:blur(75px);z-index:0;
+    background:rgba(255,0,85,.20);filter:blur(75px);z-index:0
 }
 .phone{
-    position:relative;z-index:1;width:min(430px,100%);
-    transform:rotate(-5deg) translateY(8px);
-    filter:drop-shadow(0 35px 35px rgba(0,0,0,.65));
-    transition:transform .5s;
+    position:relative;z-index:1;width:min(430px,100%);transform:rotate(-5deg) translateY(8px);
+    filter:drop-shadow(0 35px 35px rgba(0,0,0,.65));transition:transform .5s
 }
 .showcase:hover .phone{transform:rotate(-3deg) translateY(-5px) scale(1.02)}
 
@@ -164,39 +154,30 @@ main{padding:34px 0 70px}
     margin-top:24px;padding:34px;
     background:
       linear-gradient(rgba(8,6,12,.66),rgba(8,6,12,.78)),
-      url("https://res.cloudinary.com/vh0bcl3t/image/upload/v1788724447/ChatGPT_Image_Sep_6_2026_12_53_28_PM_xreiko.png") center/cover no-repeat;
+      var(--background-url) center/cover no-repeat;
 }
 .download-head{text-align:center;max-width:700px;margin:auto}
 .download-head h3{font-size:clamp(25px,4vw,40px);font-weight:950}
 .download-head p{color:var(--muted);margin-top:10px;line-height:1.8}
-.installer{
-    max-width:680px;margin:28px auto 0;padding:20px;
-    border:1px solid var(--line);border-radius:23px;background:rgba(0,0,0,.28)
-}
+.installer{max-width:680px;margin:28px auto 0;padding:20px;border:1px solid var(--line);border-radius:23px;background:rgba(0,0,0,.28)}
 .app-row{display:flex;align-items:center;gap:15px}
-.app-icon{
-    width:62px;height:62px;border-radius:16px;object-fit:cover;
-    border:1px solid rgba(255,255,255,.12)
-}
+.app-icon{width:62px;height:62px;border-radius:16px;object-fit:cover;border:1px solid rgba(255,255,255,.12)}
 .app-info{flex:1}.app-info b{font-size:18px}.app-info small{display:block;color:#918e97;margin-top:4px}
 .percent{font-weight:900;color:#ff4b85}
-.progress{
-    height:10px;background:rgba(255,255,255,.08);border-radius:99px;
-    margin:20px 0 10px;overflow:hidden
-}
-.progress-bar{
-    width:0;height:100%;border-radius:inherit;
-    background:linear-gradient(90deg,#ff0055,#ff4b85);
-    box-shadow:0 0 18px rgba(255,0,85,.7);transition:width .16s linear
-}
+.progress{height:10px;background:rgba(255,255,255,.08);border-radius:99px;margin:20px 0 10px;overflow:hidden}
+.progress-bar{width:0;height:100%;border-radius:inherit;background:linear-gradient(90deg,#ff0055,#ff4b85);box-shadow:0 0 18px rgba(255,0,85,.7);transition:width .16s linear}
 .status{font-size:13px;color:#99959f;min-height:20px}
 .install-btn{
-    width:100%;margin-top:17px;border:0;cursor:pointer;
-    min-height:52px;border-radius:15px;background:#fff;color:#0a090c;
-    font-weight:950;font-size:15px;display:none;
+    width:100%;margin-top:17px;border:0;cursor:pointer;min-height:52px;border-radius:15px;
+    background:#fff;color:#0a090c;font-weight:950;font-size:15px;display:none
 }
-.install-btn:hover{background:#f0eef2}
-.install-btn.show{display:block}
+.install-btn:hover{background:#f0eef2}.install-btn.show{display:block}
+.direct-download{
+    display:none;width:100%;margin-top:17px;min-height:52px;border-radius:15px;
+    align-items:center;justify-content:center;background:linear-gradient(135deg,var(--pink),var(--pink2));
+    color:#fff;text-decoration:none;font-weight:950;box-shadow:0 12px 28px rgba(255,0,85,.24)
+}
+.direct-download.show{display:flex}
 
 /* Android-like installation sheet */
 .modal{
@@ -206,8 +187,7 @@ main{padding:34px 0 70px}
 .modal.show{display:flex}
 .android-sheet{
     width:min(520px,100%);margin:16px;padding:25px;border-radius:27px 27px 18px 18px;
-    background:#18181c;border:1px solid rgba(255,255,255,.13);
-    box-shadow:0 -20px 70px rgba(0,0,0,.55);
+    background:#18181c;border:1px solid rgba(255,255,255,.13);box-shadow:0 -20px 70px rgba(0,0,0,.55)
 }
 .android-top{display:flex;align-items:center;gap:14px}
 .android-top img{width:58px;height:58px;border-radius:15px;object-fit:cover}
@@ -215,63 +195,49 @@ main{padding:34px 0 70px}
 .android-message{margin:24px 0;color:#ddd;line-height:1.7}
 .sheet-actions{display:flex;gap:10px}
 .sheet-actions button{flex:1;min-height:50px;border-radius:14px;border:1px solid var(--line);cursor:pointer;font-weight:800}
-.confirm{background:var(--pink);color:white;border:0!important}
-.cancel{background:transparent;color:white}
+.confirm{background:var(--pink);color:white;border:0!important}.cancel{background:transparent;color:white}
 
 .loader{width:42px;height:42px;border:4px solid rgba(255,255,255,.1);border-top-color:var(--pink);border-radius:50%;animation:spin 1s linear infinite;margin:70px auto}
 @keyframes spin{to{transform:rotate(360deg)}}
 
-@media(max-width:800px){
-    main{padding-top:18px}
-    .profile{padding:25px;text-align:center;min-height:0}
-    .user{flex-direction:column;gap:18px;padding-left:0}
-    .details{width:100%}
-    .brand-top{
-        position:static;
-        width:100%;
-        margin:0 0 22px;
-        order:-1;
-    }
-    .brand-top img{width:64px;height:64px}
-    .stats{justify-content:center}
-    .showcase{grid-template-columns:1fr;padding:38px 24px;text-align:center}
-    .copy p{margin-left:auto;margin-right:auto}
-    .phone-wrap{min-height:350px;margin-top:10px}
-    .phone{width:min(285px,78vw);transform:rotate(-3deg) translateY(0)}
-}
-@media(max-width:520px){
-    .container{width:min(100% - 18px,1120px)}
-    .profile{padding:20px;border-radius:24px}
-    .avatar-wrap{width:108px;height:108px}
-    .avatar-wrap .avatar-wrap{width:108px;height:108px}
-    .avatar-wrap .avatar{width:108px;height:108px}
-    .crown{top:-15px;right:-5px;width:42px;height:36px;font-size:27px}
-    .brand img{width:72px;height:72px;border-radius:18px}
-    .stats{gap:7px}.stat{min-width:90px;padding:9px 10px}
-    .showcase{border-radius:24px;padding:30px 17px}
-    .copy h2{font-size:37px}
-    .copy p{font-size:15px}
-    .phone-wrap{min-height:330px}
-    .download{padding:22px 16px;border-radius:24px}
-    .installer{padding:15px}
-    .app-row{align-items:flex-start}
-    .app-icon{width:54px;height:54px}
-}
-
 .partnership{margin-top:24px;padding:30px;display:flex;align-items:center;gap:22px}
-.partnership-icon img{width:72px;height:72px;object-fit:cover;border-radius:18px;border:1px solid rgba(255,255,255,.14);box-shadow:0 0 28px rgba(255,0,85,.20)}
+.partnership-icon img{
+    width:72px;height:72px;object-fit:cover;border-radius:18px;border:1px solid rgba(255,255,255,.14);
+    box-shadow:0 0 28px rgba(255,0,85,.20)
+}
 .partnership-copy{flex:1}
 .partnership-kicker{font-size:11px;letter-spacing:2px;color:#ff4b85;font-weight:900}
 .partnership-copy h3{font-size:27px;font-weight:950;margin:5px 0 8px}
 .partnership-copy p{color:#b9b5be;line-height:1.85;font-size:14px;max-width:850px}
 .legal-note{margin-top:8px;font-size:12px!important;color:#96929c!important}
-.partnership-btn{display:inline-flex;margin-top:16px;min-height:48px;padding:0 21px;align-items:center;justify-content:center;border-radius:14px;background:linear-gradient(135deg,#ff0055,#ff397a);color:#fff;text-decoration:none;font-weight:900;box-shadow:0 12px 30px rgba(255,0,85,.23)}
-@media(max-width:650px){.partnership{padding:23px 17px;flex-direction:column;text-align:center}.partnership-copy p{font-size:13px}.partnership-btn{width:100%}}
+.partnership-btn{
+    display:inline-flex;margin-top:16px;min-height:48px;padding:0 21px;align-items:center;justify-content:center;
+    border-radius:14px;background:linear-gradient(135deg,#ff0055,#ff397a);color:#fff;text-decoration:none;
+    font-weight:900;box-shadow:0 12px 30px rgba(255,0,85,.23)
+}
 
+@media(max-width:800px){
+    main{padding-top:18px}.profile{padding:25px;text-align:center;min-height:0}
+    .user{flex-direction:column;gap:18px;padding-left:0}.details{width:100%}
+    .brand-top{position:static;width:100%;margin:0 0 22px;order:-1}
+    .brand-top img{width:64px;height:64px}.stats{justify-content:center}
+    .showcase{grid-template-columns:1fr;padding:38px 24px;text-align:center}
+    .copy p{margin-left:auto;margin-right:auto}.phone-wrap{min-height:350px;margin-top:10px}
+    .phone{width:min(285px,78vw);transform:rotate(-3deg) translateY(0)}
+}
+@media(max-width:650px){
+    .partnership{padding:23px 17px;flex-direction:column;text-align:center}
+    .partnership-copy p{font-size:13px}.partnership-btn{width:100%}
+}
+@media(max-width:520px){
+    .container{width:min(100% - 18px,1120px)}.profile{padding:20px;border-radius:24px}
+    .avatar-wrap{width:108px;height:108px}.avatar-wrap .avatar{width:108px;height:108px}
+    .stats{gap:7px}.stat{min-width:90px;padding:9px 10px}
+    .showcase{border-radius:24px;padding:30px 17px}.copy h2{font-size:37px}.copy p{font-size:15px}
+    .phone-wrap{min-height:330px}.download{padding:22px 16px;border-radius:24px}.installer{padding:15px}
+    .app-row{align-items:flex-start}.app-icon{width:54px;height:54px}
+}
 </style>
-<link rel="icon" type="image/png" href="https://res.cloudinary.com/mfkqydlq/image/upload/v1788100322/user_avatar_1788100316121.png">
-<link rel="apple-touch-icon" href="https://res.cloudinary.com/mfkqydlq/image/upload/v1788100322/user_avatar_1788100316121.png">
-<meta name="application-name" content="COBRA TV">
 </head>
 
 <body>
@@ -279,76 +245,78 @@ main{padding:34px 0 70px}
 
 <main id="profileContent" class="container" style="display:none">
 
-    <section class="card profile">
+<section class="card profile">
     <div class="user">
         <div class="avatar-wrap">
             <img id="avatar" class="avatar"
                  src="https://res.cloudinary.com/mfkqydlq/image/upload/v1788100322/user_avatar_1788100316121.png"
-                 alt="Profile">
+                 alt="صورة بروفايل مستخدم COBRA TV">
         </div>
-
         <div class="details">
             <h1 id="displayName">--</h1>
             <span id="username" class="username">--</span>
-
             <div class="stats">
                 <div class="stat"><b id="followersCount">0</b><span>المتابعون</span></div>
                 <div class="stat"><b id="followingCount">0</b><span>أتابعه</span></div>
                 <div class="stat"><b id="likesCount">0</b><span>الإعجابات</span></div>
             </div>
-
             <p id="bio" class="bio">--</p>
         </div>
     </div>
-
-    <div class="brand brand-top">
-        <img src="https://res.cloudinary.com/mfkqydlq/image/upload/v1788100322/user_avatar_1788100316121.png" alt="COBRA TV">
+    <div class="brand-top">
+        <img src="https://res.cloudinary.com/mfkqydlq/image/upload/v1788100322/user_avatar_1788100316121.png" alt="شعار COBRA TV">
         <span class="brand-name">COBRA TV</span>
     </div>
 </section>
 
-    <section class="card showcase">
-        <div class="copy">
-            <div class="kicker">COBRA TV EXPERIENCE</div>
-            <h2>كل اللي بتحبه...<br><span>في مكان واحد.</span></h2>
-            <p>
-                شاهد المحتوى، تابع المبدعين، واستمتع بالبث المباشر
-                من خلال تجربة Cobra TV المصممة ليك.
-            </p>
-            <a class="cta" href="#download">ابدأ تجربة COBRA TV</a>
-        </div>
+<section class="card showcase">
+    <div class="copy">
+        <div class="kicker">COBRA TV EXPERIENCE</div>
+        <h2>كل اللي بتحبه...<br><span>في مكان واحد.</span></h2>
+        <p>شاهد المحتوى، تابع المبدعين، واستمتع بالبث المباشر من خلال تجربة Cobra TV المصممة ليك.</p>
+        <a class="cta" href="#download" id="experienceBtn">ابدأ تجربة COBRA TV</a>
+    </div>
+    <div class="phone-wrap">
+        <img class="phone"
+             src="https://res.cloudinary.com/vh0bcl3t/image/upload/v1788725660/ChatGPT_Image_6_%D8%B3%D8%A8%D8%AA%D9%85%D8%A8%D8%B1_2026_01_13_13_%D9%85_t2gzzc.png"
+             alt="تطبيق COBRA TV على الهاتف">
+    </div>
+</section>
 
-        <div class="phone-wrap">
-            <img class="phone"
-                 src="https://res.cloudinary.com/vh0bcl3t/image/upload/v1788725660/ChatGPT_Image_6_%D8%B3%D8%A8%D8%AA%D9%85%D8%A8%D8%B1_2026_01_13_13_%D9%85_t2gzzc.png"
-                 alt="COBRA TV App">
-        </div>
-    </section>
+<section id="download" class="card download">
+    <div class="download-head">
+        <h3>جاهز تدخل عالم COBRA TV؟</h3>
+        <p>اضغط تحميل لتنزيل التطبيق مباشرة على جهازك.</p>
+    </div>
 
-    <section id="download" class="card download">
-        <div class="download-head">
-            <h3>جاهز تدخل عالم COBRA TV؟</h3>
-            <p>جهّز التطبيق على جهازك وابدأ التجربة في ثواني.</p>
-        </div>
-
-        <div class="installer">
-            <div class="app-row">
-                <img class="app-icon"
-                     src="https://res.cloudinary.com/mfkqydlq/image/upload/v1788100322/user_avatar_1788100316121.png"
-                     alt="COBRA TV">
-                <div class="app-info">
-                    <b>COBRA TV</b>
-                    <small id="downloadText">اضغط تحميل لبدء تنزيل التطبيق</small>
-                </div>
-                <span id="percent" class="percent">0%</span>
+    <div class="installer">
+        <div class="app-row">
+            <img class="app-icon"
+                 src="https://res.cloudinary.com/mfkqydlq/image/upload/v1788100322/user_avatar_1788100316121.png"
+                 alt="COBRA TV">
+            <div class="app-info">
+                <b>COBRA TV</b>
+                <small id="downloadText">اضغط تحميل لبدء تنزيل التطبيق</small>
             </div>
-
-            <div class="progress"><div id="progressBar" class="progress-bar"></div></div>
-            <div id="status" class="status">جاري تجهيز ملف التطبيق...</div>
-            <button id="downloadBtn" class="install-btn show">تحميل التطبيق</button>
-            <button id="installBtn" class="install-btn">تثبيت التطبيق</button>
+            <span id="percent" class="percent">جاهز</span>
         </div>
-    </section>
+
+        <div class="progress" id="progressWrap" aria-hidden="true">
+            <div id="progressBar" class="progress-bar"></div>
+        </div>
+        <div id="status" class="status">جاهز لبدء التحميل.</div>
+
+        <!-- Direct download: avoids loading the complete APK into browser memory. -->
+        <a id="downloadBtn" class="direct-download show"
+           href="https://files.catbox.moe/ie752l.apk"
+           download="COBRA-TV.apk"
+           rel="noopener">
+           تحميل التطبيق
+        </a>
+
+        <button id="installBtn" class="install-btn">تثبيت التطبيق</button>
+    </div>
+</section>
 
 <section id="partnership" class="card partnership">
     <div class="partnership-icon">
@@ -371,11 +339,11 @@ main{padding:34px 0 70px}
             <img src="https://res.cloudinary.com/mfkqydlq/image/upload/v1788100322/user_avatar_1788100316121.png" alt="COBRA TV">
             <div>
                 <h4>تثبيت COBRA TV</h4>
-                <p>واجهة تثبيت محاكاة داخل الموقع</p>
+                <p>سيتم فتح ملف APK بواسطة النظام</p>
             </div>
         </div>
         <div class="android-message">
-            تم تجهيز التطبيق بنجاح. اضغط «تثبيت» للانتقال إلى ملف الـAPK.
+            تم تجهيز رابط التطبيق. اضغط «تثبيت» لبدء تنزيل ملف الـAPK مباشرة.
         </div>
         <div class="sheet-actions">
             <button class="cancel" id="cancelInstall">إلغاء</button>
@@ -390,7 +358,7 @@ import { getFirestore, doc, getDoc, collection, query, where, getDocs }
 from "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCZzSbLegFJ_xaVVqtFWFUCu2WFOd42cF0",
+    apiKey: "AIzaSyCZzSbLegFJ_xaVVqtFWCu2WFOd42cF0",
     authDomain: "cobra-tv-b1231.firebaseapp.com",
     projectId: "cobra-tv-b1231",
     storageBucket: "cobra-tv-b1231.firebasestorage.app",
@@ -405,17 +373,20 @@ const db = getFirestore(app);
 /* 😂 غيّر رابط تحميل التطبيق من هنا فقط */
 const APP_DOWNLOAD_URL = "https://files.catbox.moe/ie752l.apk";
 
-/* 🎨 غيّر رابط الخلفية من CSS body هنا */
+/* 🎨 غيّر رابط الخلفية من هنا فقط */
 const BACKGROUND_URL =
 "https://res.cloudinary.com/vh0bcl3t/image/upload/v1788724447/ChatGPT_Image_Sep_6_2026_12_53_28_PM_xreiko.png";
 
-/* 📱 غيّر صورة الموبايل من .phone src هنا */
+/* 📱 غيّر صورة الموبايل من هنا فقط */
 const PHONE_IMAGE_URL =
 "https://res.cloudinary.com/vh0bcl3t/image/upload/v1788725660/ChatGPT_Image_6_%D8%B3%D8%A8%D8%AA%D9%85%D8%A8%D8%B1_2026_01_13_13_%D9%85_t2gzzc.png";
 
-/* 🐍 غيّر لوجو Cobra TV من هنا */
+/* 🐍 غيّر لوجو Cobra TV من هنا فقط */
 const LOGO_URL =
 "https://res.cloudinary.com/mfkqydlq/image/upload/v1788100322/user_avatar_1788100316121.png";
+
+/* 📧 بريد الشراكات — نفس البريد الموجود في الكود الأصلي */
+const PARTNERSHIP_EMAIL = "partnership@cobratv.app";
 
 function formatNumber(num){
     if(!num || isNaN(num)) return "0";
@@ -427,14 +398,56 @@ function formatNumber(num){
 function applyAssets(){
     document.documentElement.style.setProperty("--background-url", `url("${BACKGROUND_URL}")`);
     document.querySelectorAll(".phone").forEach(x => x.src = PHONE_IMAGE_URL);
-    document.querySelectorAll(".app-icon, .brand img").forEach(x => x.src = LOGO_URL);
+    document.querySelectorAll(".app-icon, .brand-top img, .partnership-icon img, .android-top img")
+        .forEach(x => x.src = LOGO_URL);
+
+    const mailButton = document.querySelector(".partnership-btn");
+    if(mailButton) mailButton.href = "mailto:" + PARTNERSHIP_EMAIL;
+
+    const canonical = document.createElement("link");
+    canonical.rel = "canonical";
+    canonical.href = location.href.split("#")[0];
+    document.head.appendChild(canonical);
+}
+
+function updateStructuredData(name, username, avatarUrl){
+    const data = {
+        "@context":"https://schema.org",
+        "@type":"ProfilePage",
+        "name": `بروفايل ${name} على COBRA TV`,
+        "description": `صفحة بروفايل المستخدم ${name} (@${username}) على منصة COBRA TV.`,
+        "url": location.href,
+        "image": avatarUrl || LOGO_URL,
+        "isPartOf":{
+            "@type":"WebSite",
+            "name":"COBRA TV",
+            "url": location.origin
+        },
+        "about":{
+            "@type":"MobileApplication",
+            "name":"COBRA TV",
+            "applicationCategory":"SocialNetworkingApplication",
+            "operatingSystem":"Android"
+        },
+        "mainEntity":{
+            "@type":"Person",
+            "name":name,
+            "identifier":username,
+            "image":avatarUrl || LOGO_URL
+        }
+    };
+    document.getElementById("pageStructuredData").textContent =
+        JSON.stringify(data, null, 2);
 }
 
 async function fetchUserProfile(){
     const params = new URLSearchParams(location.search);
     const userQuery = params.get("u");
 
-    if(!userQuery){ showError("الرابط غير صحيح أو لا يحتوي على اسم مستخدم"); return; }
+    if(!userQuery){
+        showError("الرابط غير صحيح أو لا يحتوي على اسم مستخدم");
+        return;
+    }
 
     try{
         let userData = null;
@@ -461,143 +474,70 @@ function renderUserData(data,userId){
 
     const name=data.name || data.displayName || userId;
     const username=data.username || userId;
+    const avatarUrl=data.photoUrl || data.avatarUrl || LOGO_URL;
 
     document.getElementById("displayName").textContent=name;
     document.getElementById("username").textContent="@"+username;
     document.getElementById("bio").textContent=data.bio ||
         "مرحباً بك في صفحة بروفايلي الرسمية على تطبيق COBRA TV 🔥";
 
-    if(data.photoUrl || data.avatarUrl)
-        document.getElementById("avatar").src=data.photoUrl || data.avatarUrl;
-
+    document.getElementById("avatar").src=avatarUrl;
     document.getElementById("followersCount").textContent=formatNumber(data.followersCount || 0);
     document.getElementById("followingCount").textContent=formatNumber(data.followingCount || 0);
     document.getElementById("likesCount").textContent=formatNumber(data.likesCount || 0);
 
-    /* نحتفظ بالـ Deep Link القديم لفتح التطبيق إن كان مثبتاً */
-    const deepLink=`intent://user?u=${encodeURIComponent(username)}#Intent;scheme=cobratv;package=com.cobratv.app;end`;
+    updateStructuredData(name, username, avatarUrl);
 
-    document.querySelector(".cta").onclick=()=> {
+    document.title = `${name} (@${username}) - COBRA TV`;
+    document.querySelector('meta[property="og:title"]').content =
+        `بروفايل ${name} (@${username}) على COBRA TV`;
+    document.querySelector('meta[property="og:description"]').content =
+        `صفحة بروفايل المستخدم ${name} على منصة COBRA TV.`;
+    document.querySelector('meta[name="description"]').content =
+        `صفحة بروفايل المستخدم ${name} (@${username}) على منصة COBRA TV.`;
+
+    document.getElementById("experienceBtn").onclick = (e)=>{
+        e.preventDefault();
         document.getElementById("download").scrollIntoView({behavior:"smooth"});
     };
 
-    startDownloadSimulation(deepLink);
+    setupDirectDownload();
 }
 
-async function startDownloadSimulation(deepLink){
-    const bar=document.getElementById("progressBar");
-    const percent=document.getElementById("percent");
+function setupDirectDownload(){
+    const downloadBtn=document.getElementById("downloadBtn");
     const status=document.getElementById("status");
     const text=document.getElementById("downloadText");
-    const downloadBtn=document.getElementById("downloadBtn");
-    const installBtn=document.getElementById("installBtn");
+    const percent=document.getElementById("percent");
+    const bar=document.getElementById("progressBar");
+    const progressWrap=document.getElementById("progressWrap");
 
-    downloadBtn.onclick=async()=>{
-        downloadBtn.disabled=true;
-        downloadBtn.style.opacity=".55";
-        downloadBtn.textContent="جاري التحميل...";
-        text.textContent="جاري تنزيل ملف COBRA TV...";
-        status.textContent="يتم تنزيل التطبيق...";
+    /*
+      لا نستخدم fetch/Blob هنا.
+      المتصفح هو الذي يدير تنزيل الـAPK مباشرة، وهذا يمنع تحميل الـAPK
+      بالكامل داخل ذاكرة صفحة الويب ويكون أسرع وأخف على الهاتف.
+      لا يمكن عرض Progress حقيقي من JavaScript أثناء direct download
+      إلا إذا كان السيرفر يوفر API/stream مناسبًا مع Content-Length/CORS.
+    */
+    downloadBtn.href = APP_DOWNLOAD_URL;
+    downloadBtn.download = "COBRA-TV.apk";
+
+    downloadBtn.addEventListener("click", ()=>{
+        text.textContent="بدأ تنزيل ملف COBRA TV مباشرة...";
+        status.textContent="التنزيل يتم بواسطة المتصفح مباشرة.";
+        percent.textContent="↓";
         bar.style.width="0%";
-        percent.textContent="0%";
-
-        try{
-            const response=await fetch(APP_DOWNLOAD_URL,{mode:"cors",cache:"no-store"});
-            if(!response.ok) throw new Error("HTTP "+response.status);
-
-            const total=Number(response.headers.get("Content-Length")||0);
-            if(!response.body || !total){
-                throw new Error("STREAM_UNAVAILABLE");
-            }
-
-            const reader=response.body.getReader();
-            const chunks=[];
-            let received=0;
-
-            while(true){
-                const {done,value}=await reader.read();
-                if(done) break;
-                chunks.push(value);
-                received += value.byteLength;
-
-                const p=Math.min(100,Math.round((received/total)*100));
-                bar.style.width=p+"%";
-                percent.textContent=p+"%";
-
-                const mb=(received/1048576).toFixed(1);
-                const totalMb=(total/1048576).toFixed(1);
-                status.textContent=`جاري التحميل... ${mb} MB / ${totalMb} MB`;
-            }
-
-            const blob=new Blob(chunks,{type:"application/vnd.android.package-archive"});
-            const objectUrl=URL.createObjectURL(blob);
-
-            bar.style.width="100%";
-            percent.textContent="100%";
-            text.textContent="اكتمل التحميل";
-            status.textContent="تم تنزيل التطبيق بنجاح ✓";
-            downloadBtn.style.display="none";
-            installBtn.classList.add("show");
-
-            installBtn.onclick=()=>{
-                document.getElementById("installModal").classList.add("show");
-
-                document.getElementById("confirmInstall").onclick=()=>{
-                    const a=document.createElement("a");
-                    a.href=objectUrl;
-                    a.download="COBRA-TV.apk";
-                    a.rel="noopener";
-                    document.body.appendChild(a);
-                    a.click();
-                    a.remove();
-
-                    setTimeout(()=>{
-                        URL.revokeObjectURL(objectUrl);
-                        document.getElementById("installModal").classList.remove("show");
-                    },1000);
-                };
-            };
-
-        }catch(error){
-            console.warn("Real progress download unavailable:",error);
-
-            /* لو السيرفر لا يسمح بـ CORS/Content-Length، ننتقل للتنزيل المباشر.
-               لن نزعم أن النسبة حقيقية في هذه الحالة. */
-            bar.style.width="100%";
-            percent.textContent="جاهز";
-            text.textContent="ملف التطبيق جاهز";
-            status.textContent="اضغط تثبيت لبدء تنزيل الـAPK.";
-
-            downloadBtn.style.display="none";
-            installBtn.classList.add("show");
-
-            installBtn.onclick=()=>{
-                document.getElementById("installModal").classList.add("show");
-            };
-
-            document.getElementById("confirmInstall").onclick=()=>{
-                const a=document.createElement("a");
-                a.href=APP_DOWNLOAD_URL;
-                a.download="COBRA-TV.apk";
-                a.rel="noopener";
-                document.body.appendChild(a);
-                a.click();
-                a.remove();
-                document.getElementById("installModal").classList.remove("show");
-            };
-        }
-    };
-
-    document.getElementById("cancelInstall").onclick=()=>{
-        document.getElementById("installModal").classList.remove("show");
-    };
+        progressWrap.setAttribute("aria-hidden","true");
+    }, {once:false});
 }
+
 function showError(msg){
     document.getElementById("loader").style.display="none";
     document.getElementById("profileContent").style.display="block";
     document.getElementById("displayName").textContent=msg;
     document.getElementById("username").textContent="";
     document.getElementById("bio").textContent="";
+    document.title="COBRA TV";
 }
 
 applyAssets();
