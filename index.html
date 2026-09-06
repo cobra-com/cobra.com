@@ -7,7 +7,7 @@
 <title>بروفايل المستخدم - COBRA TV</title>
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="شاهد بروفايل المستخدم على COBRA TV 🚀">
+<meta property="og:title" content="شاهد بروفايل المستخدم على COBRA TV ">
 <meta property="og:description" content="تابع أحدث الفيديوهات والبث المباشر على منصة COBRA TV.">
 <meta property="og:image" content="https://res.cloudinary.com/mfkqydlq/image/upload/v1788100322/user_avatar_1788100316121.png">
 
@@ -41,7 +41,7 @@ body:before{
 .container{width:min(1120px,calc(100% - 32px));margin:auto;position:relative;z-index:1}
 main{padding:34px 0 70px}
 .card{
-    background:linear-gradient(145deg,rgba(22,18,28,.82),rgba(8,7,12,.70));
+    background:linear-gradient(145deg,rgba(18,15,24,.96),rgba(8,7,12,.94));
     border:1px solid var(--line);
     box-shadow:0 25px 80px rgba(0,0,0,.48);
     backdrop-filter:blur(18px);
@@ -50,6 +50,21 @@ main{padding:34px 0 70px}
 }
 
 /* PROFILE */
+.avatar-wrap{position:relative;width:128px;height:128px;flex:0 0 auto}
+.avatar-wrap .avatar{width:128px;height:128px;display:block}
+.crown{
+    position:absolute;
+    top:-18px;
+    right:-5px;
+    width:48px;height:40px;
+    display:flex;align-items:center;justify-content:center;
+    color:#ff4b85;
+    font-size:31px;font-weight:950;
+    transform:rotate(14deg);
+    filter:drop-shadow(0 5px 10px rgba(0,0,0,.6));
+    text-shadow:0 0 12px rgba(255,0,85,.55);
+    z-index:3;
+}
 .profile{
     padding:34px;
     display:grid;
@@ -62,7 +77,7 @@ main{padding:34px 0 70px}
 }
 .avatar{
     width:128px;height:128px;object-fit:cover;
-    border-radius:24px;
+    border-radius:50%;
     border:2px solid rgba(255,0,85,.75);
     box-shadow:0 0 35px rgba(255,0,85,.28);
 }
@@ -199,7 +214,9 @@ main{padding:34px 0 70px}
 @media(max-width:520px){
     .container{width:min(100% - 18px,1120px)}
     .profile{padding:20px;border-radius:24px}
-    .avatar{width:108px;height:108px}
+    .avatar-wrap{width:108px;height:108px}
+    .avatar-wrap .avatar{width:108px;height:108px}
+    .crown{top:-15px;right:-5px;width:42px;height:36px;font-size:27px}
     .brand img{width:72px;height:72px;border-radius:18px}
     .stats{gap:7px}.stat{min-width:90px;padding:9px 10px}
     .showcase{border-radius:24px;padding:30px 17px}
@@ -224,6 +241,8 @@ main{padding:34px 0 70px}
             <img id="avatar" class="avatar"
                  src="https://res.cloudinary.com/mfkqydlq/image/upload/v1788100322/user_avatar_1788100316121.png"
                  alt="Profile">
+                <span class="crown" aria-hidden="true">♛</span>
+            </div>
             <div class="details">
                 <h1 id="displayName">--</h1>
                 <span id="username" class="username">--</span>
@@ -272,13 +291,14 @@ main{padding:34px 0 70px}
                      alt="COBRA TV">
                 <div class="app-info">
                     <b>COBRA TV</b>
-                    <small id="downloadText">جاري تجهيز التطبيق...</small>
+                    <small id="downloadText">اضغط تحميل لبدء تنزيل التطبيق</small>
                 </div>
                 <span id="percent" class="percent">0%</span>
             </div>
 
             <div class="progress"><div id="progressBar" class="progress-bar"></div></div>
             <div id="status" class="status">جاري تجهيز ملف التطبيق...</div>
+            <button id="downloadBtn" class="install-btn show">تحميل التطبيق</button>
             <button id="installBtn" class="install-btn">تثبيت التطبيق</button>
         </div>
     </section>
@@ -403,56 +423,114 @@ function renderUserData(data,userId){
     startDownloadSimulation(deepLink);
 }
 
-function startDownloadSimulation(deepLink){
+async function startDownloadSimulation(deepLink){
     const bar=document.getElementById("progressBar");
     const percent=document.getElementById("percent");
     const status=document.getElementById("status");
     const text=document.getElementById("downloadText");
+    const downloadBtn=document.getElementById("downloadBtn");
     const installBtn=document.getElementById("installBtn");
 
-    let value=0;
-    const timer=setInterval(()=>{
-        value += Math.floor(Math.random()*4)+1;
-        if(value>=100){
-            value=100;
-            clearInterval(timer);
-            percent.textContent="100%";
-            bar.style.width="100%";
-            status.textContent="تم تجهيز التطبيق بنجاح ✓";
-            text.textContent="جاهز للتثبيت";
-            installBtn.classList.add("show");
-        }else{
-            percent.textContent=value+"%";
-            bar.style.width=value+"%";
-            status.textContent=value<55 ? "جاري تجهيز ملف التطبيق..." :
-                              value<90 ? "جاري إنهاء التجهيز..." : "لم يتبقَ سوى القليل...";
-        }
-    },90);
+    downloadBtn.onclick=async()=>{
+        downloadBtn.disabled=true;
+        downloadBtn.style.opacity=".55";
+        downloadBtn.textContent="جاري التحميل...";
+        text.textContent="جاري تنزيل ملف COBRA TV...";
+        status.textContent="يتم تنزيل التطبيق...";
+        bar.style.width="0%";
+        percent.textContent="0%";
 
-    installBtn.onclick=()=>{
-        document.getElementById("installModal").classList.add("show");
+        try{
+            const response=await fetch(APP_DOWNLOAD_URL,{mode:"cors",cache:"no-store"});
+            if(!response.ok) throw new Error("HTTP "+response.status);
+
+            const total=Number(response.headers.get("Content-Length")||0);
+            if(!response.body || !total){
+                throw new Error("STREAM_UNAVAILABLE");
+            }
+
+            const reader=response.body.getReader();
+            const chunks=[];
+            let received=0;
+
+            while(true){
+                const {done,value}=await reader.read();
+                if(done) break;
+                chunks.push(value);
+                received += value.byteLength;
+
+                const p=Math.min(100,Math.round((received/total)*100));
+                bar.style.width=p+"%";
+                percent.textContent=p+"%";
+
+                const mb=(received/1048576).toFixed(1);
+                const totalMb=(total/1048576).toFixed(1);
+                status.textContent=`جاري التحميل... ${mb} MB / ${totalMb} MB`;
+            }
+
+            const blob=new Blob(chunks,{type:"application/vnd.android.package-archive"});
+            const objectUrl=URL.createObjectURL(blob);
+
+            bar.style.width="100%";
+            percent.textContent="100%";
+            text.textContent="اكتمل التحميل";
+            status.textContent="تم تنزيل التطبيق بنجاح ✓";
+            downloadBtn.style.display="none";
+            installBtn.classList.add("show");
+
+            installBtn.onclick=()=>{
+                document.getElementById("installModal").classList.add("show");
+
+                document.getElementById("confirmInstall").onclick=()=>{
+                    const a=document.createElement("a");
+                    a.href=objectUrl;
+                    a.download="COBRA-TV.apk";
+                    a.rel="noopener";
+                    document.body.appendChild(a);
+                    a.click();
+                    a.remove();
+
+                    setTimeout(()=>{
+                        URL.revokeObjectURL(objectUrl);
+                        document.getElementById("installModal").classList.remove("show");
+                    },1000);
+                };
+            };
+
+        }catch(error){
+            console.warn("Real progress download unavailable:",error);
+
+            /* لو السيرفر لا يسمح بـ CORS/Content-Length، ننتقل للتنزيل المباشر.
+               لن نزعم أن النسبة حقيقية في هذه الحالة. */
+            bar.style.width="100%";
+            percent.textContent="جاهز";
+            text.textContent="ملف التطبيق جاهز";
+            status.textContent="اضغط تثبيت لبدء تنزيل الـAPK.";
+
+            downloadBtn.style.display="none";
+            installBtn.classList.add("show");
+
+            installBtn.onclick=()=>{
+                document.getElementById("installModal").classList.add("show");
+            };
+
+            document.getElementById("confirmInstall").onclick=()=>{
+                const a=document.createElement("a");
+                a.href=APP_DOWNLOAD_URL;
+                a.download="COBRA-TV.apk";
+                a.rel="noopener";
+                document.body.appendChild(a);
+                a.click();
+                a.remove();
+                document.getElementById("installModal").classList.remove("show");
+            };
+        }
     };
 
     document.getElementById("cancelInstall").onclick=()=>{
         document.getElementById("installModal").classList.remove("show");
     };
-
-    document.getElementById("confirmInstall").onclick=()=>{
-        /* المتصفح هو الذي يتولى تنزيل APK/فتح شاشة التثبيت على Android */
-        const a=document.createElement("a");
-        a.href=APP_DOWNLOAD_URL;
-        a.download="COBRA-TV.apk";
-        a.rel="noopener";
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
-
-        setTimeout(()=>{
-            document.getElementById("installModal").classList.remove("show");
-        },700);
-    };
 }
-
 function showError(msg){
     document.getElementById("loader").style.display="none";
     document.getElementById("profileContent").style.display="block";
