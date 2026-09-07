@@ -6,10 +6,19 @@
 <meta name="theme-color" content="#09070d">
 <title>بروفايل المستخدم - COBRA TV</title>
 
+<!-- Open Graph / Meta Tags -->
 <meta property="og:type" content="profile">
+<meta property="og:site_name" content="COBRA TV">
 <meta property="og:title" content="بروفايل المستخدم - COBRA TV">
 <meta property="og:description" content="شاهد صفحة البروفايل الرسمية للمستخدم على منصة COBRA TV.">
 <meta property="og:image" content="https://res.cloudinary.com/mfkqydlq/image/upload/v1788100322/user_avatar_1788100316121.png">
+<meta property="og:url" content="https://cobratvapp-com.github.io/cobratv.com/">
+
+<!-- Twitter Card Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="بروفايل المستخدم - COBRA TV">
+<meta name="twitter:description" content="شاهد صفحة البروفايل الرسمية للمستخدم على منصة COBRA TV.">
+<meta name="twitter:image" content="https://res.cloudinary.com/mfkqydlq/image/upload/v1788100322/user_avatar_1788100316121.png">
 
 <style>
 :root{
@@ -333,7 +342,7 @@ main{padding:34px 0 70px}
                 نحرص على احترام حقوق أصحاب المحتوى، ونسعى إلى التعاون مع الجهات والشركات المالكة للحقوق للحصول على التراخيص المناسبة قبل الإتاحة التجارية للمحتوى.
             </p>
             
-            <a class="partnership-btn" href="mailto: cobratvapp@gmail.com?subject=استفسار%20أو%20طلب%20تعاون%20-%20COBRA%20TV">
+            <a class="partnership-btn" href="mailto:cobratvapp@gmail.com?subject=استفسار%20أو%20طلب%20تعاون%20-%20COBRA%20TV">
                 للتواصل والشراكات الرسمية
             </a>
         </div>
@@ -407,13 +416,21 @@ function renderUserData(data,userId){
 
     const name=data.name || data.displayName || userId;
     const username=data.username || userId;
+    const userImg = data.photoUrl || data.photoURL || data.avatarUrl || data.profileImage || data.avatar || LOGO_URL;
+
+    if(document.querySelector('meta[property="og:title"]'))
+        document.querySelector('meta[property="og:title"]').setAttribute("content", name + " - COBRA TV");
+    if(document.querySelector('meta[property="og:description"]'))
+        document.querySelector('meta[property="og:description"]').setAttribute("content", data.bio || "شاهد صفحة البروفايل الرسمية للمستخدم على منصة COBRA TV");
+    if(document.querySelector('meta[property="og:image"]'))
+        document.querySelector('meta[property="og:image"]').setAttribute("content", userImg);
+    if(document.querySelector('meta[property="og:url"]'))
+        document.querySelector('meta[property="og:url"]').setAttribute("content", window.location.href);
 
     document.getElementById("displayName").textContent=name;
     document.getElementById("username").textContent="@"+username;
     document.getElementById("bio").textContent=data.bio || "مرحباً بك في صفحة بروفايلي الرسمية على تطبيق COBRA TV";
 
-    // قراءة كل مسميات حقول الصور المحتملة في الفايربيس
-    const userImg = data.photoUrl || data.photoURL || data.avatarUrl || data.profileImage || data.avatar;
     if(userImg) {
         document.getElementById("avatar").src = userImg;
     }
